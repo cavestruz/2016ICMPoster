@@ -29,13 +29,14 @@
 \usepackage{booktabs} % Top and bottom rules for tables
 \usepackage{enumitem} % Used to reduce itemize/enumerate spacing
 \usepackage{palatino} % Use the Palatino font
-\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage[font=Large,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 
 \usepackage{multicol} % Required for multiple columns
-\setlength{\columnsep}{1.5em} % Slightly increase the space between columns
+\setlength{\columnsep}{0.4em} % Slightly increase the space between columns
 \setlength{\columnseprule}{0mm} % No horizontal rule between columns
 
 \usepackage{tikz} % Required for flow chart
+\usepackage{onimage}
 \usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
 
 \newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
@@ -63,7 +64,7 @@ textborder=roundedleft, % Format of the border around content boxes, can be: non
 eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
 headerheight=0.1\textheight, % Height of the header
 headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
-headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
+headerfont=\LARGE\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
 %textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
 linewidth=2pt % Width of the border lines around content boxes
 }
@@ -81,15 +82,15 @@ linewidth=2pt % Width of the border lines around content boxes
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\headerbox{Abstract}{name=abstract,column=0,span=2,row=0}{ \Large
+\headerbox{Summary}{name=abstract,column=0,span=2,row=0}{ \Large
   X-ray measurements of the intracluster medium (ICM) suggest that
   temperature profiles at large radii deviate from self-similar
   evolution. Using a mass-limited sample of galaxy clusters from
-  cosmological hydrodynamical simulations, we show that the departure
+  cosmological hydrodynamical simulations, we show that {\bf the departure
   from self-similarity is due to physical processes that are driven by
   mergers and accretion. The dominant contribution comes from the
   evolution of non-thermal gas motions that have not yet thermalized
-  (stirring). The evolution of accreting cool, dense gas substructures
+  (stirring).} The evolution of accreting cool, dense gas substructures
   that bias the average temperature low (clumping), is subdominant. We
   can mitigate departures from self-similarity with a careful choice
   of halo overdensity definition that scales out the accretion
@@ -112,29 +113,57 @@ linewidth=2pt % Width of the border lines around content boxes
 %	Cluster Outskirts and Accretion
 %----------------------------------------------------------------------------------------
 
-\headerbox{Cluster outskirts are sensitive to accretion}{name=accretion,column=2,span=2,row=0}{
-
+\headerbox{Accretion stirs and clumps the outskirts}{name=accretion,column=0,span=2,below=abstract}{
+\vspace{-1em}
 \begin{multicols}{2}
-\vspace{1em}
-\begin{center}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{Figure caption}
+\begin{center}\begin{tikzonimage}[width=\columnwidth, trim=0 120 500 600, clip]{figures/Abell85Composite.png}
+      %\node at ([text,text width=3cm, align=center] 0.52,0.53) {\small\bf\color{white} R2500c};
+      %%%%%%%%%%%%%%%%%%%%%%                                                                                                                         
+        \draw [cyan, line width=1.5pt] (0.49,0.55) circle [radius=1.2cm];
+        \node at ([text, cyan,text width=3cm, align=center] 0.49,0.76) {\normalsize\bf\color{cyan} R500c};
+      %%%%%%%%%%%%%%%%%%%%%%                                                                                                                         
+        \draw [cyan, line width=1.5pt] (0.49,0.55) circle [radius=1.8cm];
+        \node at ([text, cyan,text width=3cm, align=center] 0.49,0.86) {\normalsize\bf\color{cyan} R200c};
+      %%%%%%%%%%%%%%%%%%%%%%                                                                                                                         
+        \draw [white, line width=1.5pt] (0.49,0.55) circle [radius=3.6cm];
+        \node at ([text, white,text width=3cm, align=center] 0.78,.85) {\normalsize\bf\color{white} R200m};
+
+        \node at (0.15,0.2) {\includegraphics[scale=.1, trim=0 0 0 20, clip]{figures/perseusCluster_cxc_f.jpg}};
+        \draw [lime, line width=1.5pt] (0.08,0.39) -- (0.42,0.55);
+        \draw [lime, line width=1.5pt] (0.32,0.04) -- (0.5,0.45);
+        \draw [lime, line width=1.5pt] (0.49,0.55) circle [radius=0.6cm];
+        \node at ([text,text width=3cm, align=center] 0.5,0.67) {\normalsize\bf\color{lime} R2500c};
+        \node at ([text,text width=3cm, align=center] 0.16,0.34) {\normalsize\bf\color{lime} Heating/Cooling};
+        \node at ([text,text width=3cm, align=center] 0.15,0.28) {\normalsize\bf\color{lime} dependent};
+        \node at ([text,text width=3cm, align=center] 0.15,0.08) {\large\bf\color{lime} Cluster Core};
+      %%%%%%%%%%%%%%%%%%%%%%                                                                                                                         
+      \draw [<->,line width=3pt,pink] (0.55,0.5) -- (0.58,0.41);
+      \node at ([text, pink,text width=3cm, align=center] 0.62,0.36) {\large\bf\color{pink} Least};
+      \node at ([text, pink,text width=3cm, align=center] 0.66,0.29) {\large\bf\color{pink} Affected};
+      %%%%%%%%%%%%%%%%%%%%%%                                                                                                                         
+      \draw [->,line width=3pt,orange] (0.65,0.53) -- (0.94,0.53);
+      \node at ([text, white,text width=3cm, align=center] 0.8,0.72) {\large\bf\color{orange} Accretion};
+      \node at ([text, white,text width=3cm, align=center] 0.8,0.66) {\large\bf\color{orange} dependent};
+      \node at ([text, white,text width=3cm, align=center] 0.805,0.58) {\Large\bf\color{orange} Outskirts};
+
+    \end{tikzonimage}
+%\captionof{figure}{Most observations ...}
 \end{center}
-
-Aliquam auctor, metus id ultrices porta, risus enim cursus sapien, quis iaculis sapien tortor sed odio. Mauris ante orci, euismod vitae tincidunt eu, porta ut neque. Aenean sapien est, viverra vel lacinia nec, venenatis eu nulla. Maecenas ut nunc nibh, et tempus libero. Aenean vitae risus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-\end{multicols}
-
-%------------------------------------------------
-
-\begin{multicols}{2}
-\vspace{1em}
-Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ut elit sit amet metus lobortis consequat sit amet in libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel sem magna. Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu.
-
 \begin{center}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{Figure caption}
-\end{center}
+\begin{itemize}
+\alignleft
+\item[]
+\item {\Large Accretion generates non-thermal gas motions, and carry
+  in denser cooler gas with subhalos and penetrating filaments.}
+\item {\Large On the other hand, cooling, star formation, and feedback
+  processes drive ICM behavior in cluster cores.}
+\item {\Large Gas between $R_{2500c}$ and $R_{500c}$ is the least
+  affected by astrophysics.}
 
+%\item {\Large Galaxy clusters experience more mergers and accretion
+%  earlier in their history.}
+\end{itemize}
+\end{center}
 \end{multicols}
 }
 
@@ -143,34 +172,36 @@ Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci lu
 %	Key Question
 %----------------------------------------------------------------------------------------
 
-\headerbox{How can accretion lead to temperature evolution?}{name=question,column=0,span=2,below=abstract,}%bottomaligned=accretion}{ % This block's bottom aligns with the bottom of the conclusion block
+\headerbox{High redshift clusters accrete more}{name=question,column=2,span=2}%bottomaligned=accretion}{ % This block's bottom aligns with the bottom of the conclusion block
 {
 \begin{multicols}{2}
 \vspace{1em}
 \begin{center}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{Figure caption}
+\includegraphics[width=\linewidth,trim=30 190 50 -20,
+  clip]{figures/SuperClumpingCartoon_lowzclumps.png}
+\captionof{figure}{\Large\alignleft Cartoon of high redshift clusters with
+  relatively more accreting subhalos than low redshift
+  counterparts. High redshift clusters have relatively more
+  newly accreted material, and recently stirred gas motions to thermalize.}
 \end{center}
-
-Aliquam auctor, metus id ultrices porta, risus enim cursus sapien, quis iaculis sapien tortor sed odio. Mauris ante orci, euismod vitae tincidunt eu, porta ut neque. Aenean sapien est, viverra vel lacinia nec, venenatis eu nulla. Maecenas ut nunc nibh, et tempus libero. Aenean vitae risus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-\end{multicols}
-
-%------------------------------------------------
-
-\begin{multicols}{2}
-\vspace{1em}
-Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam ut elit sit amet metus lobortis consequat sit amet in libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel sem magna. Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing. Quisque vestibulum eros eu.
-
+%----------------------------------------------------%
 \begin{center}
-\includegraphics[width=0.8\linewidth]{placeholder}
-\captionof{figure}{Figure caption}
+    \begin{tikzonimage}[width=\linewidth,trim=18 18 18 18, clip]{figures/f4.pdf}
+      %\node at ([text, text width=3cm, align=center] 0.83,.07) {\color{black}\bf\small Avestruz+16};
+      \draw [->,line width=2pt,red] (0.61,0.43) -- (0.61,.48);
+      \draw [->,line width=2pt,red] (0.61,0.11) -- (0.61,.17);
+      \node at ([text, text width=3cm, align=center] 0.55,.33) {\color{red}\bf\large $\sim30\%$ increase};
+      \node at ([text, text width=3cm, align=center] 0.55,.28) {\color{red}\bf\large in non-bulk};
+      \node at ([text, text width=3cm, align=center] 0.55,.23) {\color{red}\bf\large contributions};
+      \end{tikzonimage}
+\captionof{figure}{\Large\alignleft (Right) Density profile ratio of
+  all gas to ``bulk'' gas, {\it not} in accreting
+  substructure.\cite{avestruz_etal16}}
 \end{center}
 
+
 \end{multicols}
-
 }
-
-
 %----------------------------------------------------------------------------------------
 %	FUTURE RESEARCH
 %----------------------------------------------------------------------------------------
@@ -201,45 +232,21 @@ Sed fringilla tempus hendrerit. Vestibulum ante ipsum primis in faucibus orci lu
 %	R200m
 %----------------------------------------------------------------------------------------
 
-\headerbox{Scale out accretion dependence with R200m}{name=R200m,column=2,span=2,row=1,below=accretion,above=bottom,bottomaligned=references}{
+\headerbox{Scale out accretion}{name=R200m,column=3,span=1,below=question,above=bottom,bottomaligned=references}{
+}
+%----------------------------------------------------------------------------------------
+%	Stirring
+%----------------------------------------------------------------------------------------
 
-\begin{multicols}{2}
+\headerbox{Stirred evolution}{name=stirring,column=2,span=1,below=question,above=bottom,bottomaligned=references}{
 
-\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=2cm, inner sep=0pt]
-\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
-\tikzstyle{line} = [draw, -latex']
-\tikzstyle{cloud} = [draw, ellipse, fill=red!20, node distance=3cm, minimum height=2em]
-
-\begin{tikzpicture}[node distance = 2cm, auto]
-\node [block] (init) {Initialize Model};
-\node [cloud, left of=init] (Start) {Start};
-\node [cloud, right of=init] (Start2) {Start Two};
-\node [block, below of=init] (init2) {Initialize Two};
-\node [decision, below of=init2] (End) {End};
-\path [line] (init) -- (init2);
-\path [line] (init2) -- (End);
-\path [line, dashed] (Start) -- (init);
-\path [line, dashed] (Start2) -- (init);
-\path [line, dashed] (Start2) |- (init2);
-\end{tikzpicture}
-
-%------------------------------------------------
-
-\begin{itemize}\compresslist
-\item Pellentesque eget orci eros. Fusce ultricies, tellus et pellentesque fringilla, ante massa luctus libero, quis tristique purus urna nec nibh. Phasellus fermentum rutrum elementum. Nam quis justo lectus.
-\item Vestibulum sem ante, hendrerit a gravida ac, blandit quis magna.
-\item Donec sem metus, facilisis at condimentum eget, vehicula ut massa. Morbi consequat, diam sed convallis tincidunt, arcu nunc.
-\item Nunc at convallis urna. isus ante. Pellentesque condimentum dui. Etiam sagittis purus non tellus tempor volutpat. Donec et dui non massa tristique adipiscing.
-\end{itemize}
-
-\end{multicols}
 }
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\headerbox{References}{name=references,column=0,span=2,below=question,above=bottom,bottomaligned=R200m}{
+\headerbox{References}{name=references,column=0,span=2,below=accretion,above=bottom,bottomaligned=R200m}{
 
 \renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
 \nocite{*} % Insert publications even if they are not cited in the poster
