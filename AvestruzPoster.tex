@@ -157,8 +157,7 @@ linewidth=2pt % Width of the border lines around content boxes
   in denser cooler gas with subhalos and penetrating filaments.}
 \item {\Large On the other hand, cooling, star formation, and feedback
   processes drive ICM behavior in cluster cores.}
-\item {\Large Gas between $R_{2500c}$ and $R_{500c}$ is the least
-  affected by astrophysics.}
+\item {\Large Astrophysics least affects gas between $R_{2500c}$ and $R_{500c}$.}
 
 %\item {\Large Galaxy clusters experience more mergers and accretion
 %  earlier in their history.}
@@ -179,10 +178,10 @@ linewidth=2pt % Width of the border lines around content boxes
 \begin{center}
 \includegraphics[width=\linewidth,trim=30 190 50 -20,
   clip]{figures/SuperClumpingCartoon_lowzclumps.png}
-\captionof{figure}{\Large\alignleft Cartoon of high redshift clusters with
-  relatively more accreting subhalos than low redshift
-  counterparts. High redshift clusters have relatively more
-  newly accreted material, and recently stirred gas motions to thermalize.}
+\captionof{figure}{\Large\alignleft Cartoon of a high redshift cluster
+  with relatively more accreting subhalos than its low redshift
+  counterpart. On average, high redshift clusters have relatively more newly
+  accreted material, and recently stirred gas motions yet to thermalize.}
 \end{center}
 %----------------------------------------------------%
 \begin{center}
@@ -194,9 +193,9 @@ linewidth=2pt % Width of the border lines around content boxes
       \node at ([text, text width=3cm, align=center] 0.55,.28) {\color{red}\bf\large in non-bulk};
       \node at ([text, text width=3cm, align=center] 0.55,.23) {\color{red}\bf\large contributions};
       \end{tikzonimage}
-\captionof{figure}{\Large\alignleft (Right) Density profile ratio of
-  all gas to ``bulk'' gas, {\it not} in accreting
-  substructure.\cite{avestruz_etal16}}
+\captionof{figure}{\Large\alignleft Density profile ratio of ``all''
+  to ``bulk'' gas ({\it not} in substructure) of our simulated
+  sample. \cite{avestruz_etal16}}
 \end{center}
 
 
@@ -239,6 +238,23 @@ linewidth=2pt % Width of the border lines around content boxes
 %----------------------------------------------------------------------------------------
 
 \headerbox{Stirred evolution}{name=stirring,column=2,span=1,below=question,above=bottom,bottomaligned=references}{
+\begin{center}
+      \begin{tikzonimage}[width=\linewidth, trim=10 12 6 8, clip]{figures/TmwTntTtot.png}
+        %\node at ([text, text width=3cm, align=center] 0.83,.05) {\color{black}\bf\small Avestruz+16};
+          \node at ([text, text width=3cm, align=center] 0.37,.93) {\color{blue}\large $40\%$};
+          \node at ([text, text width=3cm, align=center] 0.37,.87) {\color{orange}\large $45\%$};
+          \draw [draw=black,line width=2pt] (0.45,0.78) rectangle (0.65, 0.84);
+          \draw [<->,line width=2pt,black] (0.62,.22) -- (0.62,0.27);
+          \node at ([text, text width=3cm, align=center] 0.37,.81) {\color{black}\large $10\%$};
+          \node at ([text, text width=3cm, align=center] 0.68,.7) {\color{black}\large $T_{tot}=T_{mw}+T_{nt}$};
+      \end{tikzonimage}
+\vspace{-15pt} 
+
+\captionof{figure}{\large\alignleft ``Temperature'' profiles scaled
+  with respect to $R_{500c}$.  Total temperature self-similarly scales
+  with the critical density,\cite{avestruz_etal16} as does the
+  circular velocity \cite{lau_etal15}.}
+\end{center}
 
 }
 
