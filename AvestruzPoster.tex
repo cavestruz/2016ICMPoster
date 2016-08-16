@@ -82,21 +82,14 @@ linewidth=2pt % Width of the border lines around content boxes
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\headerbox{Summary}{name=abstract,column=0,span=2,row=0}{ \Large
-  X-ray measurements of the intracluster medium (ICM) suggest that
-  temperature profiles at large radii deviate from self-similar
-  evolution. Using a mass-limited sample of galaxy clusters from
-  cosmological hydrodynamical simulations, we show that {\bf the departure
-  from self-similarity is due to physical processes that are driven by
-  mergers and accretion. The dominant contribution comes from the
-  evolution of non-thermal gas motions that have not yet thermalized
-  (stirring).} The evolution of accreting cool, dense gas substructures
-  that bias the average temperature low (clumping), is subdominant. We
-  can mitigate departures from self-similarity with a careful choice
-  of halo overdensity definition that scales out the accretion
-  dependence. These results highlight the importance of understanding
-  non-thermal gas motions in the ICM and the use of galaxy clusters as
-  cosmological probes.
+\headerbox{Summary}{name=abstract,column=0,span=2,row=0}{ \Large We
+  show that merger and accretion driven processes break self-similar
+  temperature scaling in cluster outskirts. The dominant contribution
+  comes from the evolution of non-thermal gas motions that have not
+  yet thermalized (stirring). The evolution of accreting cool, dense
+  gas substructures that bias the average temperature low (clumping),
+  is subdominant. The choice of $R_{200m}$ in halo overdensity
+  definition scales out the accretion dependence.
 \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
 }
 
@@ -114,7 +107,7 @@ linewidth=2pt % Width of the border lines around content boxes
 %----------------------------------------------------------------------------------------
 
 \headerbox{Accretion stirs and clumps the outskirts}{name=accretion,column=0,span=2,below=abstract}{
-\vspace{-1em}
+\vspace{-2em}
 \begin{multicols}{2}
 \begin{center}\begin{tikzonimage}[width=\columnwidth, trim=0 120 500 600, clip]{figures/Abell85Composite.png}
       %\node at ([text,text width=3cm, align=center] 0.52,0.53) {\small\bf\color{white} R2500c};
@@ -232,6 +225,21 @@ linewidth=2pt % Width of the border lines around content boxes
 %----------------------------------------------------------------------------------------
 
 \headerbox{Scale out accretion}{name=R200m,column=3,span=1,below=question,above=bottom,bottomaligned=references}{
+  \begin{center}
+    \begin{tikzonimage}[scale=.4, trim=0 0 0 0, clip]{figures/MeanTscaling.png}
+        \node at ([text, text width=3cm, align=center] 0.83,.03) {\color{black}\bf\small Avestruz+16};
+        \node at ([text, text width=3cm, align=center] 0.3,.92) {\color{black}\bf\large 200m};
+        \draw [->,line width=2pt,black] (0.58,.78) -- (0.58,0.82);
+        \node at ([text, text width=3cm, align=center] 0.62,.88) {\color{black}\bf\large $\sim5\%$};
+        \node at ([text, text width=3cm, align=center] 0.3,.6) {\color{black}\bf\large 500m};
+        \draw [->,line width=2pt,black] (0.58,.43) -- (0.58,0.5);
+        \node at ([text, text width=3cm, align=center] 0.62,.6) {\color{black}\bf\large $\sim15\%$};
+        \node at ([text, text width=3cm, align=center] 0.3,.3) {\color{black}\bf\large 1600m};
+        \draw [->,line width=2pt,black] (0.58,.12) -- (0.58,0.23);
+        \node at ([text, text width=3cm, align=center] 0.62,.27) {\color{black}\bf\large $\sim45\%$};
+    \end{tikzonimage}
+  \end{center}
+
 }
 %----------------------------------------------------------------------------------------
 %	Stirring
@@ -257,6 +265,18 @@ linewidth=2pt % Width of the border lines around content boxes
 \end{center}
 
 }
+
+%% \headerbox{Less clumped evolution}{name=stirring,column=2,span=1,below=question,above=bottom,bottomaligned=references}{
+%%   \begin{center}
+%%     \begin{tikzonimage}[scale=0.4]{figures/TallTbulk.png}
+%%       \node at ([text, text width=3cm, align=center] 0.83,.05) {\color{black}\bf\small Avestruz+16};
+%%       \draw [->,line width=2pt,red] (0.62,.88) -- (0.62,0.75);
+%%       \draw [->,line width=2pt,red] (0.62,.35) -- (0.62,0.28);
+%%       \node at ([text, text width=3cm, align=center] 0.58,.18) {\color{red}\bf\normalsize $\sim10\%$ temperature suppression};
+%%     \end{tikzonimage}
+%%   \end{center}
+%% }
+
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
