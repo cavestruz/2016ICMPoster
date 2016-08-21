@@ -29,12 +29,11 @@
 \usepackage{booktabs} % Top and bottom rules for tables
 \usepackage{enumitem} % Used to reduce itemize/enumerate spacing
 \usepackage{palatino} % Use the Palatino font
-\usepackage[font=Large,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage[font=large,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 
 \usepackage{multicol} % Required for multiple columns
 \setlength{\columnsep}{0.4em} % Slightly increase the space between columns
 \setlength{\columnseprule}{0mm} % No horizontal rule between columns
-
 \usepackage{tikz} % Required for flow chart
 \usepackage{onimage}
 \usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
@@ -82,25 +81,18 @@ linewidth=2pt % Width of the border lines around content boxes
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\headerbox{Summary}{name=abstract,column=0,span=2,row=0}{ \Large We
-  show that merger and accretion driven processes break self-similar
-  temperature scaling in cluster outskirts. The dominant contribution
-  comes from the evolution of non-thermal gas motions that have not
-  yet thermalized (stirring). The evolution of accreting cool, dense
-  gas substructures that bias the average temperature low (clumping),
-  is subdominant. The choice of $R_{200m}$ in halo overdensity
-  definition scales out the accretion dependence.
+\headerbox{Summary}{name=abstract,column=0,span=2,row=0}{ \large
+  Accretion driven processes lead to an evolution in cluster outskirt
+  temperature profiles that are scaled with respect to $R_{500c}$,
+  breaking self-similar scaling. With hydrodynamical simulations, we
+  show that the dominant contribution comes from the evolution of
+  non-thermal gas motions (stirring). The evolution of accreting cool,
+  dense gas substructures that bias the average temperature low
+  (clumping), is subdominant. The choice of $R_{200m}$ in halo
+  overdensity definition scales out the accretion dependence.
 \vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
 }
 
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-
-%% \headerbox{Introduction}{name=introduction,column=1,row=0,bottomaligned=objectives}{
-
-%% Aliquam non lacus dolor, \textit{a aliquam quam}. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla in nibh mauris. Donec vel ligula nisi, a lacinia arcu. Sed mi dui, malesuada vel consectetur et, egestas porta nisi. Sed eleifend pharetra dolor, et dapibus est vulputate eu. \textbf{Integer faucibus elementum felis vitae fringilla.} In hac habitasse platea dictumst. Duis tristique rutrum nisl, nec vulputate elit porta ut. Donec sodales sollicitudin turpis sed convallis. Etiam mauris ligula, blandit adipiscing condimentum eu, dapibus pellentesque risus.
-%% }
 
 %----------------------------------------------------------------------------------------
 %	Cluster Outskirts and Accretion
@@ -109,9 +101,10 @@ linewidth=2pt % Width of the border lines around content boxes
 \headerbox{Accretion stirs and clumps the outskirts}{name=accretion,column=0,span=2,below=abstract}{
 \vspace{-2em}
 \begin{multicols}{2}
-\begin{center}\begin{tikzonimage}[width=\columnwidth, trim=0 120 500 600, clip]{figures/Abell85Composite.png}
+\begin{center}
+\begin{tikzonimage}[width=\columnwidth, trim=0 120 500 600, clip]{figures/Abell85Composite.png}
       %\node at ([text,text width=3cm, align=center] 0.52,0.53) {\small\bf\color{white} R2500c};
-      %%%%%%%%%%%%%%%%%%%%%%                                                                                                                         
+      %%%%%%%%%%%%%%%%%%%%%%                                                             
         \draw [cyan, line width=1.5pt] (0.49,0.55) circle [radius=1.2cm];
         \node at ([text, cyan,text width=3cm, align=center] 0.49,0.76) {\normalsize\bf\color{cyan} R500c};
       %%%%%%%%%%%%%%%%%%%%%%                                                                                                                         
@@ -133,25 +126,24 @@ linewidth=2pt % Width of the border lines around content boxes
       \draw [<->,line width=3pt,pink] (0.55,0.5) -- (0.58,0.41);
       \node at ([text, pink,text width=3cm, align=center] 0.62,0.36) {\large\bf\color{pink} Least};
       \node at ([text, pink,text width=3cm, align=center] 0.66,0.29) {\large\bf\color{pink} Affected};
-      %%%%%%%%%%%%%%%%%%%%%%                                                                                                                         
+      %%%%%%%%%%%%%%%%%%%%%%                                                             
       \draw [->,line width=3pt,orange] (0.65,0.53) -- (0.94,0.53);
       \node at ([text, white,text width=3cm, align=center] 0.8,0.72) {\large\bf\color{orange} Accretion};
       \node at ([text, white,text width=3cm, align=center] 0.8,0.66) {\large\bf\color{orange} dependent};
       \node at ([text, white,text width=3cm, align=center] 0.805,0.58) {\Large\bf\color{orange} Outskirts};
-
     \end{tikzonimage}
-%\captionof{figure}{Most observations ...}
 \end{center}
 \begin{center}
 \begin{itemize}
 \alignleft
 \item[]
-\item {\Large Accretion generates non-thermal gas motions, and carry
+\item {\large Accretion generates non-thermal gas motions, and carry
   in denser cooler gas with subhalos and penetrating filaments.}
-\item {\Large On the other hand, cooling, star formation, and feedback
+\item {\large Gas motions provide non-thermal pressure support.
+  Cooler gas can bias the measured temperature low.}
+\item {\large On the other hand, cooling, star formation, and feedback
   processes drive ICM behavior in cluster cores.}
-\item {\Large Astrophysics least affects gas between $R_{2500c}$ and $R_{500c}$.}
-
+\item {\large Astrophysics least affects gas between $R_{2500c}$ and $R_{500c}$.}
 %\item {\Large Galaxy clusters experience more mergers and accretion
 %  earlier in their history.}
 \end{itemize}
@@ -161,52 +153,36 @@ linewidth=2pt % Width of the border lines around content boxes
 
 
 %----------------------------------------------------------------------------------------
-%	Key Question
+%	Accretion evolution
 %----------------------------------------------------------------------------------------
 
-\headerbox{High redshift clusters accrete more}{name=question,column=2,span=2}%bottomaligned=accretion}{ % This block's bottom aligns with the bottom of the conclusion block
-{
+\headerbox{High redshift clusters accrete more}{name=evolvingaccretion,column=0,span=2,below=accretion,above=bottom}{ % This block's bottom aligns with the bottom of the conclusion block
 \begin{multicols}{2}
 \vspace{1em}
 \begin{center}
-\includegraphics[width=\linewidth,trim=30 190 50 -20,
+\includegraphics[width=\linewidth,trim=30 190 50 20,
   clip]{figures/SuperClumpingCartoon_lowzclumps.png}
-\captionof{figure}{\Large\alignleft Cartoon of a high redshift cluster
-  with relatively more accreting subhalos than its low redshift
-  counterpart. On average, high redshift clusters have relatively more newly
-  accreted material, and recently stirred gas motions yet to thermalize.}
+\captionof{figure}{\large\alignleft Cartoon: On average, high redshift
+  clusters have relatively more newly accreted material, and recently
+  stirred gas motions yet to thermalize in the ``bulk'' (non-substructure) component of the ICM.}
 \end{center}
 %----------------------------------------------------%
 \begin{center}
-    \begin{tikzonimage}[width=\linewidth,trim=18 18 18 18, clip]{figures/f4.pdf}
+    \begin{tikzonimage}[width=.9\linewidth,trim=18 18 16 17, clip]{figures/f4.pdf}
       %\node at ([text, text width=3cm, align=center] 0.83,.07) {\color{black}\bf\small Avestruz+16};
       \draw [->,line width=2pt,red] (0.61,0.43) -- (0.61,.48);
       \draw [->,line width=2pt,red] (0.61,0.11) -- (0.61,.17);
-      \node at ([text, text width=3cm, align=center] 0.55,.33) {\color{red}\bf\large $\sim30\%$ increase};
-      \node at ([text, text width=3cm, align=center] 0.55,.28) {\color{red}\bf\large in non-bulk};
-      \node at ([text, text width=3cm, align=center] 0.55,.23) {\color{red}\bf\large contributions};
+      \node at ([text, text width=3cm, align=center] 0.45,.33) {\color{red}\bf\large $\sim30\%$ increase};
+      \node at ([text, text width=3cm, align=center] 0.45,.28) {\color{red}\bf\large in substructure};
+      \node at ([text, text width=3cm, align=center] 0.45,.23) {\color{red}\bf\large contributions};
+      \node at ([text, text width=3cm, align=center] 0.45,.18) {\color{red}\bf\large to gas density};
       \end{tikzonimage}
-\captionof{figure}{\Large\alignleft Density profile ratio of ``all''
-  to ``bulk'' gas ({\it not} in substructure) of our simulated
-  sample. \cite{avestruz_etal16}}
+%% \captionof{figure}{\large\alignleft Density profile ratio of ``all''
+%%   to ``bulk'' gas ({\it not} in substructure) of our simulated
+%%   sample. \cite{avestruz_etal16}}
 \end{center}
-
-
 \end{multicols}
 }
-%----------------------------------------------------------------------------------------
-%	FUTURE RESEARCH
-%----------------------------------------------------------------------------------------
-
-%% \headerbox{Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
-
-%% \begin{multicols}{2}
-%% Integer sed lectus vel mauris euismod suscipit. Praesent a est a est ultricies pellentesque. Donec tincidunt, nunc in feugiat varius, lectus lectus auctor lorem, egestas molestie risus erat ut nibh.
-
-%% Maecenas viverra ligula a risus blandit vel tincidunt est adipiscing. Suspendisse mollis iaculis sem, in \emph{imperdiet} orci porta vitae. Quisque id dui sed ante sollicitudin sagittis.
-%% \end{multicols}
-%% }
-
 %----------------------------------------------------------------------------------------
 %	CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
@@ -221,75 +197,104 @@ linewidth=2pt % Width of the border lines around content boxes
 %% }
 
 %----------------------------------------------------------------------------------------
-%	R200m
+%	Stirring
 %----------------------------------------------------------------------------------------
 
-\headerbox{Scale out accretion}{name=R200m,column=3,span=1,below=question,above=bottom,bottomaligned=references}{
+\headerbox{More stirred, less clumped evolution}{name=stirring,column=2,span=2,above=R200m,bottomaligned=accretion}{
+\begin{multicols}{2}
+\begin{center}
+      \begin{tikzonimage}[width=\linewidth, trim=10 12 5 8, clip]{figures/TmwTntTtot.png}
+        %\node at ([text, text width=3cm, align=center] 0.83,.05) {\color{black}\bf\small Avestruz+16};
+          \node at ([text, text width=3cm, align=center] 0.37,.93) {\color{blue}\large $-40\%$};
+          \node at ([text, text width=3cm, align=center] 0.37,.87) {\color{orange}\large $+45\%$};
+          %\draw [draw=black,line width=2pt] (0.45,0.78) rectangle (0.65, 0.84);
+          \draw [<->,line width=2pt,black] (0.62,.6) -- (0.62,0.65);
+          \node at ([text, text width=3cm, align=center] 0.35,.81) {\color{black}\large $\sim\rm{few}\%$};
+          %\node at ([text, text width=3cm, align=center] 0.7,.71) {\color{black}\bf\normalsize };          
+          \node at ([text, text width=3cm, align=center] 0.8,.67) {\color{black}\bf\normalsize No evolution};
+          \node at ([text, text width=3cm, align=center] 0.88,.625) {\color{black}\bf\normalsize in $\tilde{T}_{tot}$};
+          \draw [->,line width=2.5pt,blue] (0.62,.56) -- (0.62,0.48);
+          \node at ([text, text width=3cm, align=center] 0.29,.59) {\color{blue}\bf\normalsize Lower $\tilde{T}_{mw}$};
+          \node at ([text, text width=3cm, align=center] 0.29,.55) {\color{blue}\bf\normalsize from less };
+          \node at ([text, text width=3cm, align=center] 0.36,.5) {\color{blue}\bf\normalsize thermalized gas};
+          \draw [->,line width=2.5pt,orange] (0.62,.25) -- (0.62,0.35);
+          \node at ([text, text width=3cm, align=center] 0.4,.32) {\color{orange}\bf\normalsize Increasing $\tilde{T}_{nt}$,};
+          \node at ([text, text width=3cm, align=center] 0.4,.27) {\color{orange}\bf\normalsize e.g. stirring, with z};
+      \end{tikzonimage}
+\vspace{-22pt} \captionof{figure}{\large\alignleft Scaled
+  ``temperature'' profiles.  The total temperature accounts for gas
+  motions/stirring with the non-thermal temperature, $T_{nt}\equiv
+  \frac{\mu m_p}{3k_b} \langle v^2_{\text{gas}}\rangle_{\rm mw}$, and
+  its evolution scales self-similarly with the critical
+  density. \cite{avestruz_etal16} The potential well exhibits the same
+  self-similar scaling. \cite{lau_etal15}}
+\end{center}
+%-------------------------------%
   \begin{center}
-    \begin{tikzonimage}[scale=.4, trim=0 0 0 0, clip]{figures/MeanTscaling.png}
-        \node at ([text, text width=3cm, align=center] 0.83,.03) {\color{black}\bf\small Avestruz+16};
-        \node at ([text, text width=3cm, align=center] 0.3,.92) {\color{black}\bf\large 200m};
+    \begin{tikzonimage}[width=\linewidth,trim=0 11 5 6, clip]{figures/TallTbulk.png}
+      %\node at ([text, text width=3cm, align=center] 0.83,.05) {\color{black}\bf\small Avestruz+16};
+      \draw [->,line width=2pt,red] (0.62,.88) -- (0.62,0.75);
+      \draw [->,line width=2.5pt,red] (0.62,.35) -- (0.62,0.26);
+      \node at ([text, text width=3cm, align=center] 0.43,.24) {\color{red}\bf\normalsize $\sim10\%$ temperature};
+      \node at ([text, text width=3cm, align=center] 0.43,.20) {\color{red}\bf\normalsize suppression};
+      \node at ([text, text width=3cm, align=center] 0.49,.16) {\color{red}\bf\normalsize from structures/clumping};
+    \end{tikzonimage}
+\vspace{-20pt}
+\captionof{figure}{\large\alignleft Ratio of average temperature
+  profiles with all of the gas to the ``bulk'' component.  At
+  ${R}\approx1.5{R}_{500c}$, substructure causes no more than a $10\%$
+  evolution in our sample from $0<z<0.7$.  Clumped evolution at this
+  radius is comparable for the spectroscopically weighted
+  temperature.}
+  \end{center}
+\end{multicols}
+}
+%----------------------------------------------------------------------------------------
+%	R200m
+%----------------------------------------------------------------------------------------
+\headerbox{Scale out accretion with $\Delta=200m$}{name=R200m,column=2,span=2,above=bottom,below=stirring,bottomaligned=evolvingaccretion}{
+  \begin{multicols}{2}
+  \begin{center}
+    \begin{tikzonimage}[width=0.93\linewidth, trim=0 0 0 0, clip]{figures/MeanTscaling.png}
+        %\node at ([text, text width=3cm, align=center] 0.83,.03) {\color{black}\bf\small Avestruz+16};
+        \draw [draw=white,line width=2pt,fill=white] (0.18,0.88) rectangle (0.32, 0.96);
+        \node at ([text, text width=3cm, align=center] 0.3,.92) {\color{black}\bf\large $\Delta=200m$};
         \draw [->,line width=2pt,black] (0.58,.78) -- (0.58,0.82);
         \node at ([text, text width=3cm, align=center] 0.62,.88) {\color{black}\bf\large $\sim5\%$};
-        \node at ([text, text width=3cm, align=center] 0.3,.6) {\color{black}\bf\large 500m};
+        \draw [draw=white,line width=2pt,fill=white] (0.18,0.55) rectangle (0.32, 0.63);
+        \node at ([text, text width=3cm, align=center] 0.3,.6) {\color{black}\bf\large $\Delta=500m$};
         \draw [->,line width=2pt,black] (0.58,.43) -- (0.58,0.5);
         \node at ([text, text width=3cm, align=center] 0.62,.6) {\color{black}\bf\large $\sim15\%$};
-        \node at ([text, text width=3cm, align=center] 0.3,.3) {\color{black}\bf\large 1600m};
+        \draw [draw=white,line width=2pt,fill=white] (0.18,0.25) rectangle (0.32, 0.3);
+        \node at ([text, text width=3cm, align=center] 0.3,.27) {\color{black}\bf\large $\Delta=1600m$};
         \draw [->,line width=2pt,black] (0.58,.12) -- (0.58,0.23);
         \node at ([text, text width=3cm, align=center] 0.62,.27) {\color{black}\bf\large $\sim45\%$};
     \end{tikzonimage}
   \end{center}
-
-}
-%----------------------------------------------------------------------------------------
-%	Stirring
-%----------------------------------------------------------------------------------------
-
-\headerbox{Stirred evolution}{name=stirring,column=2,span=1,below=question,above=bottom,bottomaligned=references}{
+\vspace{-20pt}
 \begin{center}
-      \begin{tikzonimage}[width=\linewidth, trim=10 12 6 8, clip]{figures/TmwTntTtot.png}
-        %\node at ([text, text width=3cm, align=center] 0.83,.05) {\color{black}\bf\small Avestruz+16};
-          \node at ([text, text width=3cm, align=center] 0.37,.93) {\color{blue}\large $40\%$};
-          \node at ([text, text width=3cm, align=center] 0.37,.87) {\color{orange}\large $45\%$};
-          \draw [draw=black,line width=2pt] (0.45,0.78) rectangle (0.65, 0.84);
-          \draw [<->,line width=2pt,black] (0.62,.22) -- (0.62,0.27);
-          \node at ([text, text width=3cm, align=center] 0.37,.81) {\color{black}\large $10\%$};
-          \node at ([text, text width=3cm, align=center] 0.68,.7) {\color{black}\large $T_{tot}=T_{mw}+T_{nt}$};
-      \end{tikzonimage}
-\vspace{-15pt} 
-
-\captionof{figure}{\large\alignleft ``Temperature'' profiles scaled
-  with respect to $R_{500c}$.  Total temperature self-similarly scales
-  with the critical density,\cite{avestruz_etal16} as does the
-  circular velocity \cite{lau_etal15}.}
+\captionof{figure}{\large Ratio of temperature profiles, scaled with
+  $\Delta_m$, to the $z=0$ profile.  ${R}_{200m}$ scales with the
+  average location of the accretion shock \cite{lau_etal15}. Since
+  stirring is accretion-driven, $\Delta=200m$ alone scales out the
+  temperature evolution.}
 \end{center}
-
+\end{multicols}
 }
-
-%% \headerbox{Less clumped evolution}{name=stirring,column=2,span=1,below=question,above=bottom,bottomaligned=references}{
-%%   \begin{center}
-%%     \begin{tikzonimage}[scale=0.4]{figures/TallTbulk.png}
-%%       \node at ([text, text width=3cm, align=center] 0.83,.05) {\color{black}\bf\small Avestruz+16};
-%%       \draw [->,line width=2pt,red] (0.62,.88) -- (0.62,0.75);
-%%       \draw [->,line width=2pt,red] (0.62,.35) -- (0.62,0.28);
-%%       \node at ([text, text width=3cm, align=center] 0.58,.18) {\color{red}\bf\normalsize $\sim10\%$ temperature suppression};
-%%     \end{tikzonimage}
-%%   \end{center}
-%% }
-
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\headerbox{References}{name=references,column=0,span=2,below=accretion,above=bottom,bottomaligned=R200m}{
-
+\headerbox{References}{name=references,column=3,span=1,above=bottom}{
 \renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
 \nocite{*} % Insert publications even if they are not cited in the poster
-\small{ % Reduce the font size in this block
+\scriptsize{ % Reduce the font size in this block
 \bibliographystyle{unsrt}
 \bibliography{sample} % Use sample.bib as the bibliography file
-}}
+}
+
+}
 
 
 %----------------------------------------------------------------------------------------
